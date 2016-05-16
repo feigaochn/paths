@@ -16,11 +16,11 @@ fisher paths
 ## Usage
 
 ```fish
-echo VALUE ~/.config/fish/paths.d/KEY_NAME
+echo VALUE > ~/.config/fish/paths.d/KEY_NAME
 ```
 or
 ```fish
-printf "%s\n" VALUE1 VALUE2 ~/.config/fish/paths.d/KEY_NAME
+printf "%s\n" VALUE1 VALUE2 > ~/.config/fish/paths.d/KEY_NAME
 ```
 
 
