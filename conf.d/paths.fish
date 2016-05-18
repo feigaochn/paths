@@ -16,7 +16,7 @@ end
 
 for file in "$fish/paths.d"/*
     if test -s "$file"
-        set -l name (string split -rm1 / "$file")[-1]
+        set -l name (command basename "$file")
         read -laz values < "$file"
 
         if test "$name" = PATH
