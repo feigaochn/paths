@@ -14,6 +14,11 @@ if test ! -d "$fish/paths.d"
     command mkdir -p "$fish/paths.d"
 end
 
+function __paths_tildefy -d "alias ~/ $HOME to their expansions"
+    set -l real_home ~
+    printf "%s\n" $argv | sed "s,~,$HOME,g;s,\$HOME,$HOME,g"
+end
+
 for file in "$fish/paths.d"/*
     if test -s "$file"
         set -l name (command basename "$file")
@@ -21,12 +26,16 @@ for file in "$fish/paths.d"/*
 
         if test "$name" = PATH
             for value in $values
+                set -l  value (__paths_tildefy $value)
                 if test -e "$value"
                     set -gx PATH $PATH $value
                 end
             end
         else
+            set -l values (__paths_tildefy $values)
             set -gx "$name" $$name $values
         end
     end
 end
+
+functions __paths_tildefy -e
