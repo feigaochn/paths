@@ -45,22 +45,6 @@ mkdir $paths_config/PATH
 echo $GOPATH/bin > $paths_config/GOBIN
 ```
 
-## Uninstall
-
-Use
-
-```fish
-fisher rm paths
-```
-
-to remove the plugin and
-
-```fish
-rm -rf $paths_config
-```
-
-to remove the configuration.
-
 [travis-link]: https://travis-ci.org/fisherman/paths
 [travis-badge]: https://img.shields.io/travis/fisherman/paths.svg
 [slack-link]: https://fisherman-wharf.herokuapp.com
