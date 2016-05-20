@@ -15,29 +15,51 @@ fisher paths
 
 ## Usage
 
-```fish
-echo VALUE > ~/.config/fish/paths.d/KEY_NAME
-```
-or
-```fish
-printf "%s\n" VALUE1 VALUE2 > ~/.config/fish/paths.d/KEY_NAME
-```
-
-
-## Example
-
-Set [GOPATH](https://github.com/golang/go/wiki/GOPATH).
+Create or overwrite environment variables.
 
 ```fish
-echo ~/go > ~/.config/fish/paths.d/GOPATH
+echo VALUE > $paths_config/VAR
 ```
 
-Restart any open terminal sessions for the change to take effect.
+Create or append to environment variables.
 
+```fish
+mkdir $paths_config/VAR
+echo > VALUE $paths_config/VAR/KEY
 ```
-echo $GOPATH
-/home/user/go
+
+Where KEY is the name of the file that stores VAR's value and can be any name you wish.
+
+### Examples
+
+Set $EDITOR.
+
+```fish
+echo vim > $paths_config/EDITOR
 ```
+
+Append to $PATH.
+
+```fish
+mkdir $paths_config/PATH
+echo \$GOPATH/bin > $paths_config/gobin
+```
+
+## Uninstall
+
+Use
+
+```fish
+fisher rm paths
+```
+
+to remove the plugin and
+
+```fish
+rm -rf $paths_config
+```
+
+to remove the configuration.
 
 [travis-link]: https://travis-ci.org/fisherman/paths
 [travis-badge]: https://img.shields.io/travis/fisherman/paths.svg
