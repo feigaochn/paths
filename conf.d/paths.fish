@@ -8,7 +8,7 @@ if test -z "$paths_config"
     set -gx paths_config "$config_home/fish/paths.d"
 
     if test ! -d "$paths_config"
-        command mkdir -p "$config/paths.d"
+        command mkdir -p "$paths_config/paths.d"
     end
 end
 

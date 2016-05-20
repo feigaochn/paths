@@ -7,8 +7,8 @@ script:
     - curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisherman
     - curl -L git.io/snippet >> ~/.config/fish/config.fish
     - fish -c "fisher ."
-    - fish -c "echo 42 > $paths_config/my_key"
-    - fish -c "mkdir $paths_config/my_dict; printf '%s\n' a b c > $paths_config/my_dict/keys"
-    - fish -c "test $my_dict[1] = a"
-    - fish -c "test $my_dict[2] = b"
-    - fish -c "test $my_dict[3] = c"
+    - fish -c "echo 42 > \$paths_config/my_key"
+    - fish -c "mkdir \$paths_config/my_dict; printf '%s\n' a b c > \$paths_config/my_dict/keys"
+    - fish -c "test \$my_dict[1] = a"
+    - fish -c "test \$my_dict[2] = b"
+    - fish -c "test \$my_dict[3] = c"
