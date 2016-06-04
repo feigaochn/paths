@@ -30,6 +30,8 @@ echo VALUE > $paths_config/VAR/KEY
 
 Where KEY is the name of the file that stores VAR's value and can be any name you wish.
 
+When you're done, restart any open terminal sessions for the change to take effect.
+
 ### Examples
 
 Set $EDITOR.
