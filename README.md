@@ -42,7 +42,7 @@ Append to $PATH.
 
 ```fish
 mkdir $paths_config/PATH
-echo $GOPATH/bin > $paths_config/PATHS/GOBIN
+echo $GOPATH/bin > $paths_config/PATH/GOBIN
 ```
 
 [travis-link]: https://travis-ci.org/fisherman/paths
