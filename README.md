@@ -25,7 +25,7 @@ Create or append to environment variables.
 
 ```fish
 mkdir $paths_config/VAR
-echo VALUE > $paths_config/VAR/KEY
+echo VALUE >> $paths_config/VAR/KEY
 ```
 
 Where KEY is the name of the file that stores VAR's value and can be any name you wish.
@@ -44,7 +44,7 @@ Append to $PATH.
 
 ```fish
 mkdir $paths_config/PATH
-echo $GOPATH/bin > $paths_config/PATH/GOBIN
+echo $GOPATH/bin >> $paths_config/PATH/GOBIN
 ```
 
 [travis-link]: https://travis-ci.org/fisherman/paths

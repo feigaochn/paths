@@ -38,8 +38,12 @@ switch "$FISH_VERSION"
                 set -l name (string split -rm1 / "$file")[-1]
 
                 for file in "$file"/*
-                    read -laz values < $file
-                    set -gx $name $$name $values
+                    for value in (string split \n < $file)
+                        set -l value_trimmed (string trim $value)
+                        if test -n $value_trimmed
+                            set -gx $name $$name $value_trimmed
+                        end
+                    end
                 end
 
             else if test -f "$file"
